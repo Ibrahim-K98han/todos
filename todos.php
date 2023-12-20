@@ -13,7 +13,13 @@ if(isset($_POST['user_id'])){
     while($row[] = mysqli_fetch_assoc($result)){
         $todos = $row;
     }
-    echo json_encode($todos);
+    $data =[
+        'success'=>true,
+        'message'=>'Todo Fetch Successfully',
+        'data'=>$todos
+    ];
+    echo json_encode($data);
+
 }else{
     $data = [
         'success'=>false,
